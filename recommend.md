@@ -3,7 +3,7 @@
 ## [InvokeAI](https://invoke.ai/start-here/installation/)
 最も使いやすく、本ソフトとのモデルの共有もしやすいです。
 ### モデル流用
-モデルパスに入力
+`元位置でインストール`にチェックをつけてモデルパスに入力
 ## [SwarmUI](https://swarmui.net/)
 事前に必要なものもないので使いやすいです(一部OS)。Windows版はWebUIにもGUIにもなります。
 ### モデル流用
