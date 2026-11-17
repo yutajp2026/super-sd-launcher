@@ -4,10 +4,6 @@
 最も使いやすく、本ソフトとのモデルの共有もしやすいです。
 ### モデル流用
 `元位置でインストール`にチェックをつけてモデルパスに入力
-## [SwarmUI](https://swarmui.net/)
-事前に必要なものもないので使いやすいです(一部OS)。Windows版はWebUIにもGUIにもなります。
-### モデル流用
-Models内のStable-diffusionに移動またはコピー
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 王道で、アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUI自体は使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
 ### Windowsへのインストール
@@ -73,6 +69,10 @@ export CLIP_PACKAGE=git+https://github.com/openai/CLIP.git
 5. `webui.sh`(起動ファイル)を実行
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
+## [SwarmUI](https://swarmui.net/)
+事前に必要なものもないので使いやすいです(一部OS)。ただし、アプリとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。
+### モデル流用
+Models内のStable-diffusionに移動またはコピー
 ## [ComfyUI](https://comfy.org/download) 
 アプリ版ですが、ワークフローの知識が必要なため上級者向けです。
 ### モデル流用
