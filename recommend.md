@@ -1,11 +1,11 @@
 # Stable Diffusionに興味を持った方へ
-これらのアプリには様々な機能が備わっており、本ソフトで使用したモデルを流用できるものもあります。上から順に使いやすいです。
+これらのアプリには様々な機能が備わっており、本ソフトで使用したモデルを流用できるものもあります。上から順に使いやすくメジャーです。
 ## [InvokeAI](https://invoke.ai/start-here/installation/)
 最も使いやすく、本ソフトとのモデルの共有もしやすいです。
 ### モデル流用
 `元位置でインストール`にチェックをつけてモデルパスに入力
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-王道で、アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUI自体は使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
+アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUI自体は使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
 ### Windowsへのインストール
 1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール
 2. [VC Redist](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)がない場合はインストール
@@ -14,15 +14,16 @@
 5. `webui-user.bat`の内容をメモ帳で下記に変更(remコマンドはないほうがよい)
 ```
 @echo off
-rem Pythonインストーラでの初期パス(必要に応じて削除または変更)
-rem 他のバージョンのPythonを使わないようにするために記載します。
-rem 他のバージョンと競合する場合は環境変数の設定から下記のようなパスを削除してもよいです。
+rem 下記はPythonインストーラでの初期パス(必要に応じて削除または変更)。
+rem 他のバージョンのPythonを使わないようにするために記載しています。
+rem pythonコマンドが他のバージョンと競合する場合は環境変数の設定からディレクトリのパスを削除してもよいです。
 set PYTHON="C:\Users\%username%\AppData\Local\Programs\Python\Python310\python.exe"
 
-rem Nvidia GPUがある場合はいらない
-set COMMANDLINE_ARGS="--use-cpu all --precision full --no-half --skip-torch-cuda-test"
+nvidia-smi
+if not %errorlevel% == 0 (
+    set COMMANDLINE_ARGS="--use-cpu all --precision full --no-half --skip-torch-cuda-test"
+)
 
-rem 詰み防止のため
 set STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 set CLIP_PACKAGE=git+https://github.com/openai/CLIP.git
 
@@ -52,17 +53,18 @@ sudo pacman -S yay
 yay -S python311
 ```
 3. `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`コマンドでリポジトリをクローン
-4. `webui-user.sh`の内容を下記に変更(1行目以外の#文はコメント)
+4. `webui-user.sh`の内容を下記に変更
 ```bash
 #!/bin/bash
 
-# Pythonを3.11に設定
 python_cmd="python3.11"
 
-# Nvidia GPUがない場合はハッシュタグを削除してコマンドにする
-#export COMMANDLINE_ARGS="--use-cpu all --precision full --no-half --skip-torch-cuda-test"
+if command -v nvidia-smi >/dev/null 2>&1 && nvidia-smi >/dev/null 2>&1; then
+    echo "GPU is available"
+else
+    export COMMANDLINE_ARGS="--use-cpu all --precision full --no-half --skip-torch-cuda-test"
+fi
 
-# 詰み防止のため
 export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 export CLIP_PACKAGE=git+https://github.com/openai/CLIP.git
 ```
@@ -73,15 +75,15 @@ Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと
 事前に必要なものもないので使いやすいです(一部OS)。ただし、アプリとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。
 ### モデル流用
 Models内のStable-diffusionに移動またはコピー
+## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
+CPUだけで速く画像を生成でき、起動方法でGUIにもWebUIにもなります。アプリ自体の容量もダントツ少ないです。しかしPythonと[UV](https://docs.astral.sh/uv/)が必要です。
+### モデル流用
+Huggingface Hubを利用しているので不可(設定からLCM LoRAモードをオンにしてベースモデルIDをrunwayml/stable-diffusion-v1-5を選択するとおそらく本ソフトと同じモデルを使用できます)
 ## [ComfyUI](https://comfy.org/download) 
-アプリ版ですが、ワークフローの知識が必要なため上級者向けです。
+アプリ版ですが、ワークフローの知識が必要です。
 ### モデル流用
 Models内のdiffusion_modelsに移動またはコピー
 ## [SD.Next](https://vladmandic.github.io/sdnext-docs/)
-Windowsにはランチャー版がありますが、それを使っても使わなくてもWebuiで戸惑うので初心者には向きません。
+Windowsにはランチャー版がありますがマイナーです。
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー
-## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-CPUだけで速く画像を生成でき、起動方法でGUIにもWebUIにもなります。アプリ自体の容量もダントツ少ないです。しかしPythonと[UV](https://docs.astral.sh/uv/)とStable Diffusionモデルの知識が必須なうえ、下記モジュールによってRAMが埋まるので上級者向けです。
-### モデル流用
-Huggingface Hubを利用しているので不可(設定からLCM LoRAモードをオンにしてベースモデルIDをrunwayml/stable-diffusion-v1-5を選択するとおそらく本ソフトと同じモデルを使用できます)
