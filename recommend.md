@@ -7,16 +7,15 @@
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUI自体は使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
 ### Windowsへのインストール
-1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール
+1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール(ほかのバージョンがある場合は環境変数にパスを追加しないことをおすすめします)
 2. [VC Redist](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)がない場合はインストール
 3. コマンドプロンプトを開き`winget install --id Git.Git -e --source winget`コマンドでgitをインストール
 4. `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`コマンドでリポジトリをクローン
 5. `webui-user.bat`の内容をメモ帳で下記に変更(remコマンドはないほうがよい)
 ```
 @echo off
-rem 下記はPythonインストーラでの初期パス(必要に応じて削除または変更)。
+rem 下記はPythonインストーラでの初期パス(必要に応じて変更または削除)。
 rem 他のバージョンのPythonを使わないようにするために記載しています。
-rem pythonコマンドが他のバージョンと競合する場合は環境変数の設定からディレクトリのパスを削除してもよいです。
 set PYTHON="C:\Users\%username%\AppData\Local\Programs\Python\Python310\python.exe"
 
 nvidia-smi
