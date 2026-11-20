@@ -1,11 +1,32 @@
-# Stable Diffusionに興味を持った方へ
-これらのアプリには様々な機能が備わっており、本ソフトで使用したモデルを流用できるものもあります。上から順に使いやすくメジャーです。
+# おすすめソフト
+これらのアプリには様々な機能が備わっており、本ソフトで使用したモデルを流用できるものもあります。右上のOutline(三本線)から全体を確認できます。
+# アプリあり
 ## [InvokeAI](https://invoke.ai/start-here/installation/)
 最も使いやすく、本ソフトとのモデルの共有もしやすいです。
 ### モデル流用
 `元位置でインストール`にチェックをつけてモデルパスに入力
+## [ComfyUI](https://comfy.org/download) 
+アプリ版ですが、ワークフローなどの知識が必要です。
+### モデル流用
+Models内のdiffusion_modelsに移動またはコピー
+# ワンクリックインストール
+## [SwarmUI](https://swarmui.net/)
+ワンクリックインストールなうえWindowsはデスクトップから起動できるので使いやすいです。
+### インストール時の注意点
+- インストーラはインストールしたい場所に置きます。
+- GUIとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。
+### モデル流用
+Models内のStable-Diffusionに移動またはコピー
+## [SD.Next](https://vladmandic.github.io/sdnext-docs/)
+Windowsのみランチャー版があります。
+### Windowsランチャーでのインストール時の注意点
+- ランチャーのダウンロードと初回起動でセキュリティに引っ掛かります。
+- インストールするディレクトリは初期値がランチャーの場所になっていますが、オプションで編集できます。
+### モデル流用
+Models内のStable-Diffusionに移動またはコピー
+# コードのみ
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUI自体は使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
+アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUIは使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
 ### Windowsへのインストール
 1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール(ほかのバージョンがある場合は環境変数にパスを追加しないことをおすすめします)
 2. [VC Redist](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)がない場合はインストール
@@ -70,21 +91,11 @@ export CLIP_PACKAGE=git+https://github.com/openai/CLIP.git
 5. `webui.sh`(起動ファイル)を実行
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
-## [SwarmUI](https://swarmui.net/)
-事前に必要なものもないので使いやすいです(一部OS)。ただし、アプリとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。
-### モデル流用
-Models内のStable-Diffusionに移動またはコピー
 ## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-CPUだけで速く画像を生成でき、起動方法でGUIにもWebUIにもなります。しかしPythonと[UV](https://docs.astral.sh/uv/)が必要です。
+CPUだけで速く画像を生成でき、起動方法がさまざまです(おすすめはGUI)。
+### インストール時の注意点
+Pythonと[UV](https://docs.astral.sh/uv/)が必要です。
 ### モデル流用
 1. configs\stable-diffusion-modelsにパスを入力
 2. 起動してLCM-Loraを有効化
 3. LCM-Loraベースモデルを選択
-## [ComfyUI](https://comfy.org/download) 
-アプリ版ですが、ワークフローの知識が必要です。
-### モデル流用
-Models内のdiffusion_modelsに移動またはコピー
-## [SD.Next](https://vladmandic.github.io/sdnext-docs/)
-Windowsにはランチャー版がありますがマイナーです。
-### モデル流用
-Models内のStable-Diffusionに移動またはコピー
