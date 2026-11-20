@@ -73,11 +73,13 @@ Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと
 ## [SwarmUI](https://swarmui.net/)
 事前に必要なものもないので使いやすいです(一部OS)。ただし、アプリとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。
 ### モデル流用
-Models内のStable-diffusionに移動またはコピー
+Models内のStable-Diffusionに移動またはコピー
 ## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-CPUだけで速く画像を生成でき、起動方法でGUIにもWebUIにもなります。アプリ自体の容量もダントツ少ないです。しかしPythonと[UV](https://docs.astral.sh/uv/)が必要です。
+CPUだけで速く画像を生成でき、起動方法でGUIにもWebUIにもなります。しかしPythonと[UV](https://docs.astral.sh/uv/)が必要です。
 ### モデル流用
-Huggingface Hubを利用しているので不可(設定からLCM LoRAモードをオンにしてベースモデルIDをrunwayml/stable-diffusion-v1-5を選択するとおそらく本ソフトと同じモデルを使用できます)
+1. configs\stable-diffusion-modelsにパスを入力
+2. 起動してLCM-Loraを有効化
+3. LCM-Loraベースモデルを選択
 ## [ComfyUI](https://comfy.org/download) 
 アプリ版ですが、ワークフローの知識が必要です。
 ### モデル流用
