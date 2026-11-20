@@ -13,8 +13,21 @@ Models内のdiffusion_modelsに移動またはコピー
 ## [SwarmUI](https://swarmui.net/)
 ワンクリックインストールなうえWindowsはデスクトップから起動できるので使いやすいです。
 ### インストール時の注意点
-- インストーラはインストールしたい場所に置きます。
+- ワンクリックインストーラはインストールしたい場所に置きます。
 - GUIとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。
+- Linuxではインストール前にGitと特定のバージョンのPythonが必要です。下記コマンドでインストールしてください。
+```bash
+# Debian系(Ubuntuなど)
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.13 python3.13-venv git
+```
+```bash
+# Arch系
+sudo pacman -S git
+sudo pacman -S yay
+yay -S python313 
+```
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー
 ## [SD.Next](https://vladmandic.github.io/sdnext-docs/)
