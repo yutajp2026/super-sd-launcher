@@ -32,9 +32,22 @@ yay -S python312
 Models内のStable-Diffusionに移動またはコピー
 ## [SD.Next](https://vladmandic.github.io/sdnext-docs/)(Windows/Linux)
 Windowsのみランチャー版があります。
-### Windowsランチャーでのインストール時の注意点
-- ランチャーのダウンロードと初回起動でセキュリティに引っ掛かります。
-- インストールするディレクトリは初期値がランチャーの場所になっていますが、オプションで編集できます。
+### インストール時の注意点
+- Windowsランチャーのダウンロードと初回起動でセキュリティに引っ掛かります。
+- Windowsランチャーでインストールするディレクトリは初期値がランチャーの場所になっていますが、オプションで編集できます。
+- Linuxの場合は以下を実行した後に、`PYTHON="python3.13" bash webui.sh`で初回は起動してください。2回目以降はPYTHONの指定は必要ありません。
+```bash
+# Debian系(Ubuntuなど)
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.13 python3.13-venv python3-pip
+```
+```bash
+# Arch系
+sudo pacman -S git
+sudo pacman -S yay
+yay -S python313
+```
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー
 # コードのみ
