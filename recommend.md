@@ -92,14 +92,18 @@ yay -S python311
 
 python_cmd="python3.11"
 
-if command -v nvidia-smi >/dev/null 2>&1 && nvidia-smi >/dev/null 2>&1; then
-    echo "GPU is available"
+if command -v nvidia-smi; then
+    echo "webui-user.sh: GPU is available"
 else
     export COMMANDLINE_ARGS="--use-cpu all --precision full --no-half --skip-torch-cuda-test"
 fi
 
 export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 export CLIP_PACKAGE=git+https://github.com/openai/CLIP.git
+
+mkdir -p ~/sd_cache
+export TMPDIR=~/sd_cache
+
 ```
 5. `webui.sh`(起動ファイル)を実行
 ### モデル流用
