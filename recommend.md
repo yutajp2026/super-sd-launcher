@@ -12,9 +12,9 @@ Models内のdiffusion_modelsに移動またはコピー
 # ワンクリックインストール
 ## [SwarmUI](https://swarmui.net/)
 ワンクリックインストールなうえWindowsはデスクトップから起動できるので使いやすいです。
-### インストール時の注意点
+### インストール・起動時の注意点
 - ワンクリックインストーラはインストールしたい場所に置きます。
-- GUIとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。
+- WindowsでGUIとして動作させたい場合は[.NET SDK 10.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)が必要です。LinuxではGUI起動できません。
 - Linuxではインストール前にGitと特定のバージョンのPythonが必要です。下記コマンドでインストールしてください。
 ```bash
 # Debian系(Ubuntuなど)
@@ -105,9 +105,11 @@ export CLIP_PACKAGE=git+https://github.com/openai/CLIP.git
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-CPUだけで速く画像を生成でき、起動方法がさまざまです(おすすめはGUI)。
-### インストール時の注意点
-Pythonと[UV](https://docs.astral.sh/uv/)が必要です。
+CPUだけで速く画像を生成でき、起動方法がさまざまです。おすすめはWindowsはGUI、LinuxはWebUIです。
+### インストール・起動時の注意点
+- Pythonと[UV](https://docs.astral.sh/uv/)が必要です。
+- MCPサーバーの起動は現在できません。
+- LinuxはGUI起動できません。
 ### モデル流用
 1. configs\stable-diffusion-modelsにパスを入力
 2. 起動してLCM-Loraを有効化
