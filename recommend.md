@@ -1,16 +1,16 @@
 # おすすめソフト
 これらのアプリには様々な機能が備わっており、本ソフトで使用したモデルを流用できるものもあります。右上のOutline(三本線)から全体を確認できます。
 # アプリあり
-## [InvokeAI](https://invoke.ai/start-here/installation/)
+## [InvokeAI](https://invoke.ai/start-here/installation/)(Windows/Linux/Mac)
 最も使いやすく、本ソフトとのモデルの共有もしやすいです。
 ### モデル流用
 `元位置でインストール`にチェックをつけてモデルパスに入力
-## [ComfyUI](https://comfy.org/download) 
+## [ComfyUI](https://comfy.org/download)(Windows/Linux/Mac) 
 アプリ版ですが、ワークフローなどの知識が必要です。
 ### モデル流用
 Models内のdiffusion_modelsに移動またはコピー
 # ワンクリックインストール
-## [SwarmUI](https://swarmui.net/)
+## [SwarmUI](https://swarmui.net/)(Windows/Linux/Mac/Web)
 ワンクリックインストールなうえWindowsはデスクトップから起動できるので使いやすいです。
 ### インストール・起動時の注意点
 - ワンクリックインストーラはインストールしたい場所に置きます。
@@ -30,7 +30,7 @@ yay -S python312
 ```
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー
-## [SD.Next](https://vladmandic.github.io/sdnext-docs/)
+## [SD.Next](https://vladmandic.github.io/sdnext-docs/)(Windows/Linux)
 Windowsのみランチャー版があります。
 ### Windowsランチャーでのインストール時の注意点
 - ランチャーのダウンロードと初回起動でセキュリティに引っ掛かります。
@@ -38,7 +38,7 @@ Windowsのみランチャー版があります。
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー
 # コードのみ
-## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)(Windows/Linux/Mac/Web)
 アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUIは使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
 ### Windowsへのインストール
 1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール(ほかのバージョンがある場合は環境変数にパスを追加しないことをおすすめします)
@@ -108,7 +108,7 @@ export TMPDIR=~/sdwebui_cache
 5. `webui.sh`(起動ファイル)を実行
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
-## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
+## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)(Windows/Linux/Mac/Android/Web)
 CPUだけで速く画像を生成でき、起動方法がさまざまです。おすすめはWindowsはGUI、LinuxはWebUIです。
 ### インストール・起動時の注意点
 - Pythonと[UV](https://docs.astral.sh/uv/)が必要です。
