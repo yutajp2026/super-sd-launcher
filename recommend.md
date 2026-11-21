@@ -20,13 +20,13 @@ Models内のdiffusion_modelsに移動またはコピー
 # Debian系(Ubuntuなど)
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.13 python3.13-venv git
+sudo apt install python3.12 python3.12-venv python3-pip git
 ```
 ```bash
 # Arch系
 sudo pacman -S git
 sudo pacman -S yay
-yay -S python313 
+yay -S python312
 ```
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー
@@ -67,7 +67,7 @@ call webui.bat
 1. 下記コマンドで依存関係をインストール
 ```bash
 # Debian系(Ubuntuなど)
-sudo apt install wget git libgl1 libglib2.0-0
+sudo apt install wget python3-pip git libgl1 libglib2.0-0
 ```
 ```bash
 # Arch系
