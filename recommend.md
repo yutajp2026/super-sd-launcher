@@ -101,8 +101,8 @@ fi
 export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 export CLIP_PACKAGE=git+https://github.com/openai/CLIP.git
 
-mkdir -p ~/sd_cache
-export TMPDIR=~/sd_cache
+mkdir -p ~/sdwebui_cache
+export TMPDIR=~/sdwebui_cache
 
 ```
 5. `webui.sh`(起動ファイル)を実行
