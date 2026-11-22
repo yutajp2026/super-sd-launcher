@@ -1,5 +1,9 @@
 # おすすめソフト
 これらのアプリには様々な機能が備わっており、本ソフトで使用したモデルを流用できるものもあります。右上のOutline(三本線)から全体を確認できます。
+
+> [!IMPORTANT]
+> Mac版のテストは現時点ではできていないのでPull requestsなどで情報提供求む
+
 # アプリあり
 ## [InvokeAI](https://invoke.ai/start-here/installation/)(Windows/Linux/Mac)
 最も使いやすく、本ソフトとのモデルの共有もしやすいです。
